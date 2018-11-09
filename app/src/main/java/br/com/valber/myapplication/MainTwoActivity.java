@@ -28,9 +28,9 @@ public class MainTwoActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
-    private FloatingActionButton floatingActionButton;
     public static final Integer ADD_PESSOA_REQUESTE = 1;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private Menu menu;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -45,13 +45,6 @@ public class MainTwoActivity extends AppCompatActivity {
             }
         });
 
-//        floatingActionButton = findViewById(R.id.float_button);
-//        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivityForResult(new Intent(MainTwoActivity.this, AddPessoaActivity.class), ADD_PESSOA_REQUESTE);
-//            }
-//        });
 
         recyclerView = findViewById(R.id.recy_pessoa);
         recyclerView.setHasFixedSize(true);
@@ -88,11 +81,14 @@ public class MainTwoActivity extends AppCompatActivity {
                 startActivityForResult(data, ADD_PESSOA_REQUESTE);
             }
         });
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.add_pessoa_menu, menu);
+        this.menu = menu;
         return true;
     }
 

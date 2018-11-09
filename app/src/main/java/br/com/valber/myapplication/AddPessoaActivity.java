@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 public class AddPessoaActivity extends AppCompatActivity {
@@ -25,6 +24,7 @@ public class AddPessoaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_pessoa);
 
         nomeEdt = findViewById(R.id.nome_edt);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         sobrenomeEdt = findViewById(R.id.sobrenome_edt);
         cpfEdt = findViewById(R.id.cpf_edt);
         idadeEdt = findViewById(R.id.idade_edt);
